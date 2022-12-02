@@ -12,19 +12,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
       
-
-      
-      <Threads></Threads>
-      <Post></Post>
-      {/*
     <Routes>
             <Route path="/" >
-            <Route index element={<Threads />} />
+            <Route index element={<ThreadComponent />} />
                 <Route path="post" element={<Post />} />
             </Route>
-        </Routes> */}
+        </Routes> 
 
 
 
