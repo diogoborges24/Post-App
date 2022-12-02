@@ -51,6 +51,7 @@ export default function Thread() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            href="post"
           >
             Post
           </Button>

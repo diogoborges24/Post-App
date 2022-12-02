@@ -19,10 +19,6 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 
-
-//DropDown
-const options = ['Option 1', 'Option 2'];
-
 //Images
 const Img = styled('img')({
     margin: 'auto',
