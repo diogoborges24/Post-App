@@ -11,15 +11,6 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
-
-//Images
-const Img = styled("img")({
-  margin: "auto",
-  display: "block",
-  maxWidth: "100%",
-  maxHeight: "100%",
-});
-
 export default function Post() {
   const [age, setAge] = React.useState("");
   //Dropdown changes
@@ -50,6 +41,7 @@ export default function Post() {
               {/**Dropdown */}
               <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
+                    
                   <InputLabel variant="standard" htmlFor="uncontrolled-native">
                     Category
                   </InputLabel>
@@ -61,9 +53,9 @@ export default function Post() {
                     }}
                   >
                     {/* Category thread name + question/suggestion/clarification) */}
-                    <option value={10}>Name + Question</option>
-                    <option value={20}>Name + suggestion</option>
-                    <option value={30}>Name + clarification</option>
+                    <option value={10}>thread.title + Question</option>
+                    <option value={20}>thread.title + suggestion</option>
+                    <option value={30}>thread.title + clarification</option>
                   </NativeSelect>
                 </FormControl>
               </Box>
@@ -102,8 +94,12 @@ export default function Post() {
           >
             Post
           </Button>
+
+          
         </Box>
+        
       </Box>
+      
     </Container>
   );
 }

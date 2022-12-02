@@ -31,7 +31,7 @@ export default function ThreadComp({thread}) {
           alignItems: "center",
         }}
       >
-        <Button  href="post" >
+        <Button  href="post" id="tbutton" >
             {thread.title}
           </Button>
         
