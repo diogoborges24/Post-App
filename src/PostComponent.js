@@ -14,6 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
 
 //Images
 const Img = styled("img")({
@@ -42,6 +45,16 @@ export default function RecipeReviewCard() {
   };
 
   return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      ></Box>
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
@@ -73,8 +86,6 @@ export default function RecipeReviewCard() {
               alt="complex"
               src="https://www.collinsdictionary.com/images/full/pencil_280523090.jpg"
             />
-
-
              {/**  
 <div>
 <h1>{selects}</h1>
@@ -94,7 +105,7 @@ export default function RecipeReviewCard() {
       </CardContent>
       
     </Card>
-    
+    </Container>
     
   );
 }
