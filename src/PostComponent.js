@@ -15,6 +15,14 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+//Images
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
+});
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -49,12 +57,34 @@ export default function RecipeReviewCard() {
         title="Title"
         subheader="Category"
       />
-      <CardMedia
-        component="img"
-        height="290"
-        image="https://www.collinsdictionary.com/images/full/pencil_280523090.jpg"
-        alt=""
-      />
+     
+      <Img
+              width={200}
+              alt="complex"
+              src="https://cdn-icons-png.flaticon.com/512/3524/3524335.png"
+            />
+            <Img
+              width={200}
+              alt="complex"
+              src="https://images.pvs.global/audac/products/CHA230.png?width=2048"
+            />
+            <Img
+              width={200}
+              alt="complex"
+              src="https://www.collinsdictionary.com/images/full/pencil_280523090.jpg"
+            />
+
+
+             {/**  
+<div>
+<h1>{selects}</h1>
+    <select value={selects} onChange={e=>setSelects(e.target.value)}>
+        <option>im1</option>
+        <option>im2</option>
+        <option>im3</option>
+    </select>
+</div>
+*/}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
@@ -62,6 +92,9 @@ export default function RecipeReviewCard() {
           if you like.
         </Typography>
       </CardContent>
+      
     </Card>
+    
+    
   );
 }

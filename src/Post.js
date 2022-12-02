@@ -10,7 +10,7 @@ import { styled } from "@mui/material/styles";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
-import { useState } from "react";
+
 
 //Images
 const Img = styled("img")({
@@ -23,7 +23,7 @@ const Img = styled("img")({
 export default function Post() {
   const [age, setAge] = React.useState("");
   //Dropdown changes
-  const [selects, setSelects] = useState();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -90,24 +90,6 @@ export default function Post() {
     </select>
 </div>
 */}
-
-
-
-            <Img
-              width={200}
-              alt="complex"
-              src="https://cdn-icons-png.flaticon.com/512/3524/3524335.png"
-            />
-            <Img
-              width={200}
-              alt="complex"
-              src="https://images.pvs.global/audac/products/CHA230.png?width=2048"
-            />
-            <Img
-              width={200}
-              alt="complex"
-              src="https://www.collinsdictionary.com/images/full/pencil_280523090.jpg"
-            />
 
             {/**Button */}
           </Grid>
