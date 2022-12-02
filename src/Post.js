@@ -116,7 +116,7 @@ export default function Post() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            href=""
+            href="card"
           >
             Post
           </Button>

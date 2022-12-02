@@ -5,6 +5,7 @@ import Threads from "./Threads";
 import Post from "./Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreadComponent from "./Threads";
+import PostComponent from "./PostComponent";
 
 function App() {
   const theme = useTheme();
@@ -15,8 +16,10 @@ function App() {
       
     <Routes>
             <Route path="/" >
-            <Route index element={<ThreadComponent />} />
+            <Route index element={<Threads />} />
+                <Route path="post1" element={<ThreadComponent />} />
                 <Route path="post" element={<Post />} />
+                <Route path="card" element={<PostComponent />} />
             </Route>
         </Routes> 
 
