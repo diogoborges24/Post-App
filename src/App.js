@@ -2,6 +2,8 @@
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
+import Threads  from'./Threads';
+
 
 function App() {
   const theme = useTheme();
@@ -9,9 +11,10 @@ function App() {
   return (
     <div className="App">
      
-     <Box width="100%" height={theme.spacing(20)} display="flex" alignItems="center" justifyContent="center">     
-            <Button>Diogo</Button>
-            </Box>
+       <Button>Post</Button>
+            <Threads></Threads>
+            
+          
     </div>
   );
 }
