@@ -14,11 +14,12 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import agent from "./data/agent";
 import { useState, useEffect } from "react";
+import ThreadComp from "./ThreadComponent";
 
 const theme = createTheme();
 
 const Thread = () => {
-  const [thread, setThread] = useState([{title: "max"}])
+  const [threads, setThread] = useState([{title: "max"}])
   let fetchTodo = async () => {
     const res = await agent.thread.getAll()
     console.log(res.data)
@@ -26,10 +27,10 @@ const Thread = () => {
     return res.data.data
         
        };
-       
+
   useEffect(() => {
     fetchTodo()
-    console.log(thread)
+    console.log(threads)
   },[])
   
   
@@ -46,31 +47,12 @@ const Thread = () => {
         }}
       >
         <Typography component="h1" variant="h5">
-          {thread[0].title}
+         Threads
         </Typography>
-        <Box component="form" noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="titlle"
-            label="Titlle"
-            name="titlle"
-            autoComplete="titlle"
-            autoFocus
-          />
-
-          <Button
-            type="post"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-           
-            
-          >
-            {thread[0].id}
-          </Button>
-        </Box>
+        {
+          threads.map(thread => <ThreadComp thread={thread}></ThreadComp>)
+        }
+        
       </Box>
     </Container>
   );

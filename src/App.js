@@ -15,7 +15,7 @@ function App() {
 
       
 
-      <ThreadComponent></ThreadComponent>
+      
       <Threads></Threads>
       <Post></Post>
       {/*
