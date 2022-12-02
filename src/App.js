@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import Threads from "./Threads";
 import Post from "./Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ThreadComponent from "./Threads";
 
 function App() {
   const theme = useTheme();
@@ -13,13 +14,17 @@ function App() {
       <BrowserRouter>
 
       
-      
+
+      <ThreadComponent></ThreadComponent>
+      <Threads></Threads>
+      <Post></Post>
+      {/*
     <Routes>
             <Route path="/" >
             <Route index element={<Threads />} />
                 <Route path="post" element={<Post />} />
             </Route>
-        </Routes>
+        </Routes> */}
 
 
 
