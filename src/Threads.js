@@ -12,14 +12,28 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import agent from "./data/agent";
+import { useState, useEffect } from "react";
 
 const theme = createTheme();
 
-export default function Thread() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    ;
-  };
+const Thread = () => {
+  const [thread, setThread] = useState([{title: "max"}])
+  let fetchTodo = async () => {
+    const res = await agent.thread.getAll()
+    console.log(res.data)
+    setThread(res.data)
+    return res.data.data
+        
+       };
+       
+  useEffect(() => {
+    fetchTodo()
+    console.log(thread)
+  },[])
+  
+  
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -32,9 +46,9 @@ export default function Thread() {
         }}
       >
         <Typography component="h1" variant="h5">
-          Threads
+          {thread[0].title}
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -51,12 +65,15 @@ export default function Thread() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            href="post"
+           
+            
           >
-            Post
+            {thread[0].id}
           </Button>
         </Box>
       </Box>
     </Container>
   );
 }
+
+export default Thread;
