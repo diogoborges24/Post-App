@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
 function App() {
+  const theme = useTheme();
+    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+     <Box width="100%" height={theme.spacing(20)} display="flex" alignItems="center" justifyContent="center">     
+            <Button>Diogo</Button>
+            </Box>
     </div>
   );
 }
