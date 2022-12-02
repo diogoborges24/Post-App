@@ -12,33 +12,29 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Autocomplete from '@mui/material/Autocomplete';
-import { styled } from '@mui/material/styles';
-import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
+import Autocomplete from "@mui/material/Autocomplete";
+import { styled } from "@mui/material/styles";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import NativeSelect from "@mui/material/NativeSelect";
+import { useState } from "react";
 
 //Images
-const Img = styled('img')({
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  });
-
-const theme = createTheme();
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
+});
 
 export default function Post() {
-    const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
+  //Dropdown changes
+  const [selects, setSelects] = useState();
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-  
-  
-  
- 
-  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,32 +55,26 @@ export default function Post() {
             <Grid item xs={12} sm={6}></Grid>
 
             <Grid item xs={12}>
-
-<Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Category
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: 'category',
-            id: 'uncontrolled-native',
-          }}
-        >
-            {/*thread name + question/suggestion/clarification) */}
-          <option value={10}>Name + Question</option>
-          <option value={20}>Name + suggestion</option>
-          <option value={30}>Name + clarification</option>
-        </NativeSelect>
-      </FormControl>
-    </Box>
-
-
-
-
-
-
+              {/**Dropdown */}
+              <Box sx={{ minWidth: 120 }}>
+                <FormControl fullWidth>
+                  <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                    Category
+                  </InputLabel>
+                  <NativeSelect
+                    defaultValue={30}
+                    inputProps={{
+                      name: "category",
+                      id: "uncontrolled-native",
+                    }}
+                  >
+                    {/* Category thread name + question/suggestion/clarification) */}
+                    <option value={10}>Name + Question</option>
+                    <option value={20}>Name + suggestion</option>
+                    <option value={30}>Name + clarification</option>
+                  </NativeSelect>
+                </FormControl>
+              </Box>
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -97,15 +87,42 @@ export default function Post() {
                 autoComplete="body"
               />
             </Grid>
-            <Img width={200} alt="complex" src="https://cdn-icons-png.flaticon.com/512/3524/3524335.png" />
-          
+            {/**image */}
+            {/**  
+<div>
+<h1>{selects}</h1>
+    <select value={selects} onChange={e=>setSelects(e.target.value)}>
+        <option>im1</option>
+        <option>im2</option>
+        <option>im3</option>
+    </select>
+</div>
+*/}
+
+            <Img
+              width={200}
+              alt="complex"
+              src="https://cdn-icons-png.flaticon.com/512/3524/3524335.png"
+            />
+            <Img
+              width={200}
+              alt="complex"
+              src="https://images.pvs.global/audac/products/CHA230.png?width=2048"
+            />
+            <Img
+              width={200}
+              alt="complex"
+              src="https://www.collinsdictionary.com/images/full/pencil_280523090.jpg"
+            />
+
+            {/**Button */}
           </Grid>
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            href="IN"
+            href=""
           >
             Post
           </Button>
