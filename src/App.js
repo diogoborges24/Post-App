@@ -6,6 +6,7 @@ import Post from "./Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreadComponent from "./Threads";
 import PostComponent from "./PostComponent";
+import CreateThread from "./CreateThread";
 
 function App() {
   const theme = useTheme();
@@ -20,6 +21,8 @@ function App() {
                 <Route path="post1" element={<ThreadComponent />} />
                 <Route path="post" element={<Post />} />
                 <Route path="card" element={<PostComponent />} />
+                <Route path="newt" element={<CreateThread />} />
+           
             </Route>
         </Routes> 
 

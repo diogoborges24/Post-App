@@ -12,29 +12,14 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import agent from "./data/agent";
-import { useState, useEffect } from "react";
-import ThreadComp from "./ThreadComponent";
 
 const theme = createTheme();
 
-const Thread = () => {
-  const [threads, setThread] = useState([{title: "max"}])
-  let fetchTodo = async () => {
-    const res = await agent.thread.getAll()
-    console.log(res.data)
-    setThread(res.data)
-    return res.data.data
-        
-       };
-
-  useEffect(() => {
-    fetchTodo()
-    console.log(threads)
-  },[])
-  
-  
-  
+export default function Thread() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    ;
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -45,25 +30,34 @@ const Thread = () => {
           flexDirection: "column",
           alignItems: "center",
         }}
-      > <Button
-      type="new"
-      variant="contained"
-      sx={{ mt: 3, mb: 2 }}
-      href="newt"
-      id="newthread"
-    >
-      new
-    </Button>
+      >
         <Typography component="h1" variant="h5">
-         Threads
+          Threads
         </Typography>
-        {
-          threads.map(thread => <ThreadComp thread={thread}></ThreadComp>)
-        }
-        
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="titlle"
+            label="Titlle"
+            name="titlle"
+            autoComplete="titlle"
+            autoFocus
+          />
+
+          <Button
+            type="post"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            href="post1"
+            id="button1"
+          >
+            Post
+          </Button>
+        </Box>
       </Box>
     </Container>
   );
 }
-
-export default Thread;
